@@ -11,7 +11,7 @@ class MovieGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 200,
       child: ListView.builder(
         shrinkWrap: true,
         physics: AlwaysScrollableScrollPhysics(),
@@ -29,8 +29,7 @@ class MovieGrid extends StatelessWidget {
               );
             },
             child: Container(
-              width: 150,
-              margin: EdgeInsets.all(8),
+              width: 140,
               child: Column(
                 children: [
                   CachedNetworkImage(

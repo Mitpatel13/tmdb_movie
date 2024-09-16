@@ -25,15 +25,21 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Search",
-          style: TextStyle(color: Colors.blueAccent, fontSize: 15),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.blueAccent, size: 15),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        leadingWidth:150,
+        leading: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.blueAccent, size: 15),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            Text(
+              "Search",
+              style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+            ),
+          ],
         ),
       ),
       body: FutureBuilder<Movie>(
@@ -59,7 +65,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                     imageUrl: movie.fullPosterPath,
                     height: 250,
                     width: MediaQuery.sizeOf(context).width,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                     placeholder: (context, url) => Center(child: CircularProgressIndicator()),
                     errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
@@ -92,6 +98,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                   ),
                   SizedBox(height: 20),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
@@ -103,16 +110,14 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                         ]),
                       ),
                       SizedBox(width: 20), // Add spacing between columns
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start, // Align to right
-                          children: [
-                            _buildDetailSection("Director", ["Joss Whedon"]),
-                            _buildDetailSection("Producer", ["Kevin Feige"]),
-                            _buildDetailSection("Screenwriter", ["Joss Whedon"]),
-                          ],
-                        ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start, // Align to right
+                        children: [
+                          _buildDetailSection("Director", ["Joss Whedon"]),
+                          _buildDetailSection("Producer", ["Kevin Feige"]),
+                          _buildDetailSection("Screenwriter", ["Joss Whedon"]),
+                        ],
                       ),
                     ],
                   ),
