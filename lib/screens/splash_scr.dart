@@ -6,6 +6,8 @@ class SplashScreen extends StatelessWidget {
 
   final splashController = Get.put(SplashController());
 
+   SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
 
@@ -15,7 +17,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/logo_splash.jpeg'),
-            Text(
+            const Text(
               'Shopping App',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),

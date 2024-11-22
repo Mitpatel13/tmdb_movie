@@ -10,21 +10,23 @@ class ProductScreen extends StatelessWidget {
   final cartController = Get.find<CartController>();
   final ThemeController themeController = Get.find();
 
+   ProductScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Products'),
+        title: const Text('Products'),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               Get.to(() => CartScreen());
             },
           ),
 
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               themeController.toggleTheme();
             },
@@ -41,7 +43,7 @@ class ProductScreen extends StatelessWidget {
               },
               decoration: InputDecoration(
                 hintText: 'Search products...',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -84,7 +86,7 @@ class ProductScreen extends StatelessWidget {
                               Positioned.fill(
                                 child: Container(
                                   color: Colors.black54,
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'Out of Stock',
                                       style: TextStyle(
@@ -110,7 +112,7 @@ class ProductScreen extends StatelessWidget {
                                 'Warranty: ${product.warrantyInformation}'),
                           ),
                           ListTile(
-                            title: Text('Reviews:'),
+                            title: const Text('Reviews:'),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: product.reviews!

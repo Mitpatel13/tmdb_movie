@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -16,18 +15,6 @@ class ProductController extends GetxController {
     super.onInit();
     fetchProducts();
   }
-  // Future<List<Product>> fetchProducts() async {
-  //   final url = Uri.parse('https://dummyjson.com/products');
-  //   final response = await http.get(url);
-  //
-  //   if (response.statusCode == 200) {
-  //     final jsonData = jsonDecode(response.body);
-  //     final productsJson = jsonData['products'] as List;
-  //     return productsJson.map((json) => Product.fromJson(json)).toList();
-  //   } else {
-  //     throw Exception('Failed to load products');
-  //   }
-  // }
 
   void fetchProducts() async {
     final url = Uri.parse('https://dummyjson.com/products');

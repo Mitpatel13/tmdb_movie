@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class TopProductsTable extends StatelessWidget {
   final List<Map<String, dynamic>> topProducts;
 
-  TopProductsTable({required this.topProducts});
+  const TopProductsTable({super.key, required this.topProducts});
 
   @override
   Widget build(BuildContext context) {
     return DataTable(
       columns: [
-        DataColumn(label: Text('Image')),
-        DataColumn(label: Text('Name')),
-        DataColumn(label: Text('Price')),
-        DataColumn(label: Text('Warranty')),
+        const DataColumn(label: Text('Image')),
+        const DataColumn(label: Text('Name')),
+        const DataColumn(label: Text('Price')),
+        const DataColumn(label: Text('Warranty')),
       ],
       rows: topProducts.map((product) {
         final price = product['price'];
@@ -32,7 +32,7 @@ class TopProductsTable extends StatelessWidget {
                   Positioned.fill(
                     child: Container(
                       color: Colors.black54,
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Out of Stock',
                           style: TextStyle(

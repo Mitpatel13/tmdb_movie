@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CategoryPieChart extends StatelessWidget {
   final Map<String, int> categoryData;
 
-  CategoryPieChart({required this.categoryData});
+  const CategoryPieChart({super.key, required this.categoryData});
 
   @override
   Widget build(BuildContext context) {

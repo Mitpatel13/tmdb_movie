@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class DiscountBarChart extends StatelessWidget {
   final Map<String, double> discountData;
 
-  DiscountBarChart({required this.discountData});
+  const DiscountBarChart({super.key, required this.discountData});
 
   @override
   Widget build(BuildContext context) {
